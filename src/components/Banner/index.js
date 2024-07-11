@@ -9,6 +9,6 @@ const Banner = () => {
       />
     </header>
   );
-}
+};
 
 export default Banner;
