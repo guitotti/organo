@@ -4,7 +4,7 @@ import DropdownList from "../DropdownList";
 import Button from "../Button";
 import { useState } from "react";
 
-const Form = () => {
+const Form = (props) => {
   const teams = [
     "Programação",
     "Front-end",
@@ -22,6 +22,12 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    props.toNewRegisteredEmployee({
+      name, 
+      position,
+      image,
+      team
+    })
   };
 
   return (
