@@ -22,7 +22,7 @@ const Form = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.toNewRegisteredEmployee({
+    props.toRegisterEmployee({
       name, 
       position,
       image,
@@ -57,7 +57,7 @@ const Form = (props) => {
         <DropdownList
           required={true}
           label="Times"
-          items={teams}
+          items={props.teams}
           value={team}
           onChange={(value) => setTeam(value)}
         />
