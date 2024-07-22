@@ -5,16 +5,6 @@ import Button from "../Button";
 import { useState } from "react";
 
 const Form = (props) => {
-  const teams = [
-    "Programação",
-    "Front-end",
-    "Data Science",
-    "DevOps",
-    "Ux & Design",
-    "Mobile",
-    "Inovação e Gestão",
-  ];
-
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
   const [image, setImage] = useState("");
