@@ -23,11 +23,15 @@ const Form = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.toRegisterEmployee({
-      name, 
+      name,
       position,
       image,
-      team
-    })
+      team,
+    });
+    setName("");
+    setPosition("");
+    setImage("");
+    setTeam("");
   };
 
   return (
