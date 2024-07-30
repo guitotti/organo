@@ -48,6 +48,10 @@ function App() {
     setEmployees([...employees, employee]);
   };
 
+  const deleteEmployee = () => {
+
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -63,6 +67,7 @@ function App() {
           primaryColor={team.primaryColor}
           secondaryColor={team.secondaryColor}
           employees={employees.filter(employee => employee.team === team.name)}
+          onDelete={deleteEmployee}
         />
       ))}
     </div>
