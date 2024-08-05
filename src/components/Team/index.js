@@ -11,7 +11,7 @@ const Team = ({ employees, onDelete, ...props}) => {
       <section className="team" style={css}>
         <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
         <div className="employees">
-          {props.employees.map((employee) => {
+          {employees.map((employee) => {
             return (
               <Employee
                 bgColor={props.primaryColor}

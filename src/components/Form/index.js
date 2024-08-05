@@ -4,15 +4,16 @@ import DropdownList from "../DropdownList";
 import Button from "../Button";
 import { useState } from "react";
 
-const Form = (props) => {
+const Form = ({ teams, toRegisterEmployee }) => {
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
   const [image, setImage] = useState("");
   const [team, setTeam] = useState();
 
   const handleSubmit = (event) => {
+    debugger;
     event.preventDefault();
-    props.toRegisterEmployee({
+    toRegisterEmployee({
       name,
       position,
       image,
@@ -51,7 +52,7 @@ const Form = (props) => {
         <DropdownList
           required={true}
           label="Times"
-          items={props.teams}
+          items={teams}
           value={team}
           onChange={(value) => setTeam(value)}
         />
