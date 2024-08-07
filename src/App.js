@@ -4,7 +4,7 @@ import Form from "./components/Form";
 import Team from "./components/Team";
 
 function App() {
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       name: "Programação",
       primaryColor: "#57C278",
@@ -40,7 +40,7 @@ function App() {
       primaryColor: "#FF8A29",
       secondaryColor: "#FFEEDF",
     },
-  ];
+  ]);
 
   const inicial = [
     {
@@ -221,6 +221,17 @@ function App() {
 
   const deleteEmployee = () => {};
 
+  function changeTeamColor(color, name) {
+    setTeams(
+      teams.map((team) => {
+        if (team.name === name) {
+          team.primaryColor = color;
+        }
+        return team;
+      })
+    );
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -240,9 +251,10 @@ function App() {
         //   )}
         //   onDelete={deleteEmployee}
         // />
-        <Team 
+        <Team
           key={team.name}
           name={team.name}
+          changeColor={changeTeamColor}
           primaryColor={team.primaryColor}
           secondaryColor={team.secondaryColor}
           employees={employees.filter(

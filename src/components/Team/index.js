@@ -1,7 +1,7 @@
 import Employee from "../Employee";
 import "./Team.css";
 
-const Team = ({ employees, onDelete, ...props}) => {
+const Team = ({ employees, onDelete, changeColor, ...props }) => {
   const css = {
     backgroundColor: props.secondaryColor,
   };
@@ -9,6 +9,12 @@ const Team = ({ employees, onDelete, ...props}) => {
   return (
     employees.length > 0 && (
       <section className="team" style={css}>
+        <input
+          onChange={(event) => changeColor(event.target.value, props.name)}
+          value={props.primaryColor}
+          type="color"
+          className="input-color"
+        />
         <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
         <div className="employees">
           {employees.map((employee) => {
