@@ -1,5 +1,5 @@
 import "./Form.css";
-import TextInput from "../TextInput";
+import Input from "../Input";
 import DropdownList from "../DropdownList";
 import Button from "../Button";
 import { useState } from "react";
@@ -31,21 +31,21 @@ const Form = ({ teams, toRegisterEmployee, createTeam }) => {
     <section className="form">
       <form onSubmit={handleSubmit}>
         <h2>Preencha os dados para criar o card:</h2>
-        <TextInput
+        <Input
           required
           label="Nome"
           placeholder="Digite o seu nome"
           value={name}
           onChange={(value) => setName(value)}
         />
-        <TextInput
+        <Input
           required
           label="Cargo"
           placeholder="Digite o seu cargo"
           value={position}
           onChange={(value) => setPosition(value)}
         />
-        <TextInput
+        <Input
           label="Imagem"
           placeholder="Digite o endereço de imagem"
           value={image}
@@ -67,17 +67,17 @@ const Form = ({ teams, toRegisterEmployee, createTeam }) => {
         }}
       >
         <h2>Preencha os dados para criar um novo time</h2>
-        <TextInput
+        <Input
           required
           label="Nome"
           placeholder="Digite o nome do time"
           value={teamName}
           onChange={(value) => setTeamName(value)}
         />
-        <TextInput
+        <Input
           required
+          type="color"
           label="Cor"
-          placeholder="Digite a cor do time"
           value={teamColor}
           onChange={(value) => setTeamColor(value)}
         />
