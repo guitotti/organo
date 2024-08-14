@@ -259,10 +259,15 @@ function App() {
     );
   }
 
+  function createTeam(newTeam) {
+    setTeams([...teams, { ...newTeam }]);
+  }
+
   return (
     <div className="App">
       <Banner />
       <Form
+        createTeam={createTeam}
         teams={teams.map((team) => team.name)}
         toRegisterEmployee={(employee) => handleRegisterNewEmployee(employee)}
       />
