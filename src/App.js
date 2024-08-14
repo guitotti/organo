@@ -244,7 +244,9 @@ function App() {
     setEmployees([...employees, employee]);
   };
 
-  // const deleteEmployee = () => {};
+  function deleteEmployee(name) {
+    setEmployees(employees.filter((employee) => employee.name !== name));
+  }
 
   function changeTeamColor(color, name) {
     setTeams(
@@ -284,6 +286,7 @@ function App() {
           employees={employees.filter(
             (employee) => employee.team === team.name
           )}
+          onDelete={deleteEmployee}
         />
         // console.log(team)
       ))}

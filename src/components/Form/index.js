@@ -8,7 +8,7 @@ const Form = ({ teams, toRegisterEmployee }) => {
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
   const [image, setImage] = useState("");
-  const [team, setTeam] = useState("");
+  const [team, setTeam] = useState(teams[0]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,7 +21,7 @@ const Form = ({ teams, toRegisterEmployee }) => {
     setName("");
     setPosition("");
     setImage("");
-    setTeam("");
+    setTeam(teams[0]);
   };
 
   return (
