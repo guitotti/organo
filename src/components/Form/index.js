@@ -11,7 +11,6 @@ const Form = ({ teams, toRegisterEmployee }) => {
   const [team, setTeam] = useState("");
 
   const handleSubmit = (event) => {
-    debugger;
     event.preventDefault();
     toRegisterEmployee({
       name,
